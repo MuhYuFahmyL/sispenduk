@@ -39,7 +39,7 @@
                                 </div>
                             @endif
 
-                            <form method="POST" action="{{ route('registerpost') }}" class="my-login-validation">
+                            <form method="POST" enctype="multipart/form-data" action="{{ route('registerpost') }}" class="my-login-validation">
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -148,6 +148,27 @@
                                         <input id="password-confirm" type="password" class="form-control"
                                             name="password_confirmation" required autocomplete="new-password"
                                             placeholder=" ketik ulang password">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlFile1">File KTP (format jpg/png) - ukuran maks. 2 MB</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input @error('ktp') is-invalid @enderror" id="customFile" name="ktp" required>
+                                            <label class="custom-file-label" for="customFile">Pilih File</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlFile1">File KK (format jpg/png) - ukuran maks. 2 MB</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input  @error('kk1') is-invalid @enderror" id="customFile" name="kk1" required>
+                                            <label class="custom-file-label" for="customFile">Pilih File</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlFile1">File Tambahan (format jpg/png) - ukuran maks. 2 MB</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input  @error('foto3x4') is-invalid @enderror" id="customFile" name="foto3x4" required>
+                                            <label class="custom-file-label" for="customFile">Pilih File</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group mt-2">

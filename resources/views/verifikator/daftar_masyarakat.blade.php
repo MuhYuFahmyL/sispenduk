@@ -127,6 +127,40 @@
                                                                             <td>Kewarganegaraan</td>
                                                                             <td>{{ $data->nik->kewarganegaraan }}</td>
                                                                         </tr>
+                                                                        <tr>
+                                                                            <td>Lampiran</td>
+                                                                            <td>
+                                                                                @php
+                                                                                    $path = Storage::url('img/' . $data->nik->Lampiran_1);
+                                                                                    $path2 = Storage::url('img/' . $data->nik->Lampiran_2);
+                                                                                    $path3 = Storage::url('img/' . $data->nik->Lampiran_3);
+                                                                                    
+                                                                                @endphp
+                                                                                <a class="color-pink"
+                                                                                        href="{{ url($path) }}"
+                                                                                        data-toggle="lightbox"
+                                                                                        data-max-width="800"
+                                                                                        data-max-height="800">
+                                                                                        KTP
+                                                                                    </a>
+                                                                                    |
+                                                                                    <a class="color-pink"
+                                                                                        href="{{ url($path2) }}"
+                                                                                        data-toggle="lightbox"
+                                                                                        data-max-width="1000"
+                                                                                        data-max-height="800">
+                                                                                        KK
+                                                                                    </a>
+                                                                                    |
+                                                                                    <a class="color-pink"
+                                                                                        href="{{ url($path3) }}"
+                                                                                        data-toggle="lightbox"
+                                                                                        data-max-width="600"
+                                                                                        data-max-height="600">
+                                                                                        File Tambahan
+                                                                                    </a>
+                                                                            </td>
+                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -192,6 +226,9 @@
 
 
         });
-
+        $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
     </script>
 @endsection

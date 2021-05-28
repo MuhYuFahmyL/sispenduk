@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -108,8 +109,35 @@ class AuthController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:user'],
             'phone' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:5', 'confirmed'],
-
+            'ktp' => ['required', 'mimes:png', 'max:2048'],
+            'kk1' => ['required', 'mimes:png', 'max:2048'],
+            'foto3x4' => ['required', 'mimes:png', 'max:2048'],
+            // 'ktp' => 'required|mimes:jpeg,png|max:2048',
+            // 'kk' =>'required|mimes:jpeg,png|max:2048',
+            // 'foto3x4' =>'required|mimes:jpeg,png|max:2048',
         ]);
+
+        if ($request->ktp) {
+            $extension1 = $request->ktp->extension();
+
+            $request->ktp->storeAs('/public/img', $request->nik . "ktp_regis." . $extension1);
+           
+            $url1 = Storage::url($request->nik . "ktp_regis." . $extension1);
+        }
+        if ($request->kk1) {
+            $extension2 = $request->kk1->extension();
+
+            $request->kk1->storeAs('/public/img', $request->nik . "kk_regis." . $extension2);
+            
+            $url2 = Storage::url($request->nik . "kk_regis." . $extension2);
+        }
+        if ($request->foto3x4) {
+            $extension3 = $request->foto3x4->extension();
+
+            $request->foto3x4->storeAs('/public/img', $request->nik . "foto3x4_regis." . $extension3);
+
+            $url3 = Storage::url($request->nik . "foto3x4_regis." . $extension3);
+        }
 
         $newuser = new User;
         $newuser->username = $request->username;
@@ -137,6 +165,9 @@ class AuthController extends Controller
         $nik->nama_ayah =  $request->nama_ayah;
         $nik->nama_ibu =  $request->nama_ibu;
         $nik->kewarganegaraan =  $request->kewarganegaraan;
+        $nik->Lampiran_1 =  $request->nik . "ktp_regis." . $extension1;
+        $nik->Lampiran_2 =  $request->nik . "kk_regis." . $extension2;
+        $nik->Lampiran_3 =  $request->nik . "foto3x4_regis." . $extension3;
         $nik->save();
         $nik->user()->save($newuser);
 

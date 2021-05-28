@@ -48,46 +48,33 @@
                                             <textarea class="form-control" id="kebutuhan" name="kebutuhan" rows="3" value="{{ old('kebutuhan') }}"
                                                 required></textarea>
                                         </div>
-                                        @php
-                                            $jumlah = 0;
-                                        @endphp
-                                        @foreach ($data as $item)
-                                            @if ($item->user_id == Session::get('id'))
-                                                @php
-                                                    $jumlah++;
-                                                @endphp
-                                            @endif
-                                        @endforeach
-
-                                        @if (count($data) == 0 || $jumlah == 0)
                                             <div class="form-group">
-                                                <label for="exampleFormControlFile1">File KTP (format pdf) - ukuran maks. 2
+                                                <label for="exampleFormControlFile1">File 1 (format jpg/png) - ukuran maks. 2
                                                     MB</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input @error('ktp') is-invalid @enderror" id="customFile" name="ktp"
-                                                        required>
+                                                        >
                                                     <label class="custom-file-label" for="customFile">Pilih File</label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleFormControlFile1">File KK (format pdf) - ukuran maks. 2
+                                                <label for="exampleFormControlFile1">File 2 (format jpg/png) - ukuran maks. 2
                                                     MB</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input  @error('kk') is-invalid @enderror" id="customFile" name="kk"
-                                                        required>
+                                                        >
                                                     <label class="custom-file-label" for="customFile">Pilih File</label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleFormControlFile1">Foto 3x4 (format pdf) - ukuran maks. 2
+                                                <label for="exampleFormControlFile1">File 3 (format jpg/png) - ukuran maks. 2
                                                     MB</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input  @error('foto3x4') is-invalid @enderror" id="customFile"
-                                                        name="foto3x4" required>
+                                                        name="foto3x4" >
                                                     <label class="custom-file-label" for="customFile">Pilih File</label>
                                                 </div>
                                             </div>
-                                        @endif
                                             @if ($errors->any())
                                             @foreach ($errors->all() as $error)   @endforeach
                                               

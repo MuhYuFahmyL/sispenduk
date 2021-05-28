@@ -36,6 +36,7 @@
                                             <tr>
                                                 <th>NIK</th>
                                                 <th>Jenis Surat</th>
+                                                <th>Keterangan</th>
                                                 <th>Status</th>
                                                 <th class="text-center">Aksi</th>
                                             </tr>
@@ -140,7 +141,7 @@
                                                                                         data-toggle="lightbox"
                                                                                         data-max-width="800"
                                                                                         data-max-height="800">
-                                                                                        KTP
+                                                                                        File 1
                                                                                     </a>
                                                                                     |
                                                                                     <a class="color-pink"
@@ -148,7 +149,7 @@
                                                                                         data-toggle="lightbox"
                                                                                         data-max-width="1000"
                                                                                         data-max-height="800">
-                                                                                        KK
+                                                                                        File 2
                                                                                     </a>
                                                                                     |
                                                                                     <a class="color-pink"
@@ -156,7 +157,7 @@
                                                                                         data-toggle="lightbox"
                                                                                         data-max-width="600"
                                                                                         data-max-height="600">
-                                                                                        Pas Foto
+                                                                                        File 3
                                                                                     </a>
                                                                                 </td>
                                                                             </tr>
@@ -308,7 +309,7 @@
                                                                                     data-toggle="lightbox"
                                                                                     data-max-width="800"
                                                                                     data-max-height="800">
-                                                                                    KTP
+                                                                                    File 1
                                                                                 </a>
                                                                                 |
                                                                                 <a class="color-pink"
@@ -316,7 +317,7 @@
                                                                                     data-toggle="lightbox"
                                                                                     data-max-width="1000"
                                                                                     data-max-height="800">
-                                                                                    KK
+                                                                                    File 2
                                                                                 </a>
                                                                                 |
                                                                                 <a class="color-pink"
@@ -324,7 +325,7 @@
                                                                                     data-toggle="lightbox"
                                                                                     data-max-width="600"
                                                                                     data-max-height="600">
-                                                                                    Pas Foto
+                                                                                    File 3
                                                                                 </a>
                                                                             </td>
                                                                         </tr>
@@ -392,6 +393,10 @@
                     {
                         data: 'jenis_surat',
                         name: 'jenis_surat'
+                    },
+                    {
+                        data: 'kebutuhan',
+                        name: 'kebutuhan'
                     },
                     {
                         data: 'transworkflow[].wf_reference.status',

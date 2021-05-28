@@ -75,9 +75,9 @@ class MasyarakatController extends Controller
                 'jenis_surat' => 'required',
                 'kebutuhan' => 'required',
 
-                'ktp' => 'required|mimes:jpeg,png|max:2048',
-                'kk' =>'required|mimes:jpeg,png|max:2048',
-                'foto3x4' =>'required|mimes:jpeg,png|max:2048',
+                // 'ktp' => 'required|mimes:jpeg,png|max:2048',
+                // 'kk' =>'required|mimes:jpeg,png|max:2048',
+                // 'foto3x4' =>'required|mimes:jpeg,png|max:2048',
 
             ]);
         } else {
@@ -91,15 +91,23 @@ class MasyarakatController extends Controller
         $id = $request->created_by;
         if ($request->ktp) {
             $extension1 = $request->ktp->extension();
-            $extension2 = $request->kk->extension();
-            $extension3 = $request->foto3x4->extension();
 
             $request->ktp->storeAs('/public/img', $id . "ktp." . $extension1);
+           
+            $url1 = Storage::url($id . "ktp." . $extension1);
+        }
+        if ($request->kk) {
+            $extension2 = $request->kk->extension();
+
             $request->kk->storeAs('/public/img', $id . "kk." . $extension2);
+            
+            $url2 = Storage::url($id . "kk." . $extension2);
+        }
+        if ($request->foto3x4) {
+            $extension3 = $request->foto3x4->extension();
+
             $request->foto3x4->storeAs('/public/img', $id . "foto3x4." . $extension3);
 
-            $url1 = Storage::url($id . "ktp." . $extension1);
-            $url2 = Storage::url($id . "kk." . $extension2);
             $url3 = Storage::url($id . "foto3x4." . $extension3);
         }
 
@@ -117,7 +125,9 @@ class MasyarakatController extends Controller
         $pengajuan->jenis_surat = $request->jenis_surat;
         if ($request->ktp) {
             $pengajuan->Lampiran_1 = $id . "ktp." . $extension1;
+        } else if ($request->kk) {
             $pengajuan->Lampiran_2 = $id . "kk." . $extension2;
+        } else if ($request->foto3x4) {
             $pengajuan->Lampiran_3 = $id . "foto3x4." . $extension3;
         } else {
             $takelampiran = Pengajuan::where('user_id', $id)->first();

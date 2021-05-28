@@ -28,7 +28,10 @@ class Nik extends Model
         'kabupaten' ,
         'nama_ayah' ,
         'nama_ibu' ,
-        'kewarganegaraan' ,      
+        'kewarganegaraan' ,
+        'Lampiran_1' ,
+        'Lampiran_2' ,
+        'Lampiran_3' ,      
         'id_ktp' ,       
     ];
 
