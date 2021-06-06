@@ -125,7 +125,7 @@
             </table><br>
             <table width="100%">
                 <tr>
-                    <td class="indentasi">Demikian surat keterangan ini dibuat untuk menjadikan periksa dan apabila
+                    <td class="indentasi">Demikian surat keterangan ini dibuat untuk menjadikan syarat administrasi dan apabila
                         dikemudian hari ternyata terdapat <br> kekeliruan / kesalahan akan diadakan pembetulan
                         seperlunya.</td>
                 </tr>

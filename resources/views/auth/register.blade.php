@@ -81,13 +81,13 @@
                                         <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" class="form-control" name="dusun" placeholder="Dusun" required>
+                                        <input type="text" class="form-control" name="dusun" placeholder="Dusun / Apabila tidak ada, beri tanda -" >
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" class="form-control" name="rt" placeholder="RT" required>
+                                        <input type="text" class="form-control" name="rt" placeholder="RT / Apabila tidak ada, beri tanda -">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" class="form-control" name="rw" placeholder="RW" required>
+                                        <input type="text" class="form-control" name="rw" placeholder="RW / Apabila tidak ada, beri tanda -">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <input type="text" class="form-control" name="kecamatan" placeholder="Kecamatan"

@@ -112,8 +112,7 @@
                 <tr>
                     <td class="indentasi">Orang tersebut diatas benar-benar penduduk kami Dusun <a
                             style="text-transform: capitalize;">@php echo 'V'; @endphp, Desa @__raw_block_1__@, Kecamatan
-                            @php echo 'Tanjung Morawa';  @endphp, @__raw_block_3__@</a>. Bahwa nama yang bersangkutan tidak berada di rumah
-                        dan tidak diketahui keberadaannya.</td>
+                            @php echo 'Tanjung Morawa';  @endphp, @__raw_block_3__@</a>. Bahwa nama yang bersangkutan berada di lingkungan desa tanjung baru.</td>
                 </tr>
             </table><br>
             <table width="100%">
